@@ -1,0 +1,27 @@
+<!-- <div *ngFor="let user of users">
+    {{ user | json }}
+</div> -->
+<button [routerLink]="['/create-user/']" routerLinkActive="router-link-active" >Create</button>
+
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>first name</th>
+      <th>last name</th>
+      <th>email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users;">
+      <td><img [src]="user.avatar"></td>
+      <td>{{user.id}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td> <button [routerLink]="['/view-user/' + user.id]" routerLinkActive="router-link-active" > view profile</button></td>
+      <td> <button [routerLink]="['/update-user/' + user.id]" routerLinkActive="router-link-active" > update profile</button></td>
+    </tr>
+  </tbody>
+</table>
